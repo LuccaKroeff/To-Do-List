@@ -2,12 +2,13 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
+    font-family: Arial;
 }
 
 body {
     background-color: rgb(187, 186, 186);
     font-family: Arial;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .listBox {
@@ -23,7 +24,8 @@ body {
     margin-bottom: 5px;
     padding: 10px;
     width: 400px;
-    height: 30px
+    height: 30px;
+    font-size: 11px;
 }
 
 .listElement {
@@ -47,9 +49,18 @@ body {
 .buttonAddItem {
     margin: 10px;
     padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
 }
 
 .date {
     padding: 5px;
-    height: 30px
+    height: 30px;
+    font-size: 11px;
+}
+
+.prioritySelect {
+    height: 30px;
+    font-size: 11px;
 }

@@ -75,10 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let checkbox = new CheckBox(this.id, (id) => this.checkLineItem(id));
             let deleteButton = new DeleteButton(this.id, (id) => this.deleteLineItem(id));
+            let prioritySelect = this.createPrioritySelect();
             let dueDate = new DueDate(this.id, (id) => this.addDueDate(id));
 
             newLineItem.appendChild(checkbox.element);
             newLineItem.appendChild(input);
+            newLineItem.appendChild(prioritySelect);
             newLineItem.appendChild(dueDate.element);
             newLineItem.appendChild(deleteButton.element);
 
@@ -95,6 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 input.style.textDecoration = 'none';
             }
+        }
+
+        createPrioritySelect() {
+            let select = document.createElement('select');
+            select.classList.add('prioritySelect');
+
+            let options = ["High", "Medium", "Low"];
+            options.forEach(option => {
+                let optionElement = document.createElement('option');
+                optionElement.value = option.toLowerCase();
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+            });
+
+            return select;
         }
 
         deleteLineItem(buttonId) {
